@@ -8,10 +8,9 @@ import numpy as np
 #Функция решаемой функции, входной параметр x.
 def function(x,s):
     function = eval(s)
-    #Возвращаем решение функции от x.
     return function
     
-#Функция для ввода значений x.
+#Ввод значений x.
 def inx():
     #Ввод с границами и интервалом.
     x_values = []
@@ -29,7 +28,7 @@ def answ(x_values,s):
     #Возвращаем список всех ответов f(x) в списке.
     return f
     
-#Функция создания графика.
+#Создание графика.
 def graph(x_values,f,s):
     y_values = [(function(x,s)) for x in x_values]
     plt.plot(x_values, y_values)
@@ -38,24 +37,21 @@ def graph(x_values,f,s):
         y_values = function(x,s)
         plt.annotate('(' + str(x)[:4] + ":" + str(y_values)[:4] + ")",
         xy = (x,y_values), fontsize=4)
-    #Название графика.
-    plt.title(s, fontsize=24)
-    #Название оси x.
+    #Название.
+    plt.title(s, fontsize=24
     plt.xlabel("x", fontsize=11)
-    #Название оси y.
     plt.ylabel("y", fontsize=11)
     #Границы осей.
     plt.axis([min(x_values),max(x_values) , min(f), max(f)])
     #Вывод графика.
     plt.show()
     
-# Основной цикл программы.
+# Основной цикл.
 while True:
     key = input("Выберите режим сканирования графика:\n Aвтоматическое-1\n Pучное-2 \n")
     if key == '2':
-        #Вызов функции для ввода интервалов x и функции.
+       
         x_values = inx()
-        #Вводим формулу, по которой будет решение.
         s = input("Введите формулу\n")
         try:
             #Вызываем функцию, для решения функции.
@@ -78,7 +74,7 @@ while True:
         graph(x_values,f,s)
         
 
-    if input("Выход из программы-1\nНовое сканирование-2:") == '1':
+    if input("Завершить работу?(y/n)") == 'y':
         break
     
 
