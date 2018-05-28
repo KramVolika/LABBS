@@ -38,7 +38,7 @@ def graph(x_values,f,s):
         plt.annotate('(' + str(x)[:4] + ":" + str(y_values)[:4] + ")",
         xy = (x,y_values), fontsize=4)
     #Название.
-    plt.title(s, fontsize=24
+    plt.title(s, fontsize=24)
     plt.xlabel("x", fontsize=11)
     plt.ylabel("y", fontsize=11)
     #Границы осей.
