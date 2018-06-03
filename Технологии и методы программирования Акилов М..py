@@ -37,10 +37,7 @@ def graph(x_values,f,s):
         y_values = function(x,s)
         plt.annotate('(' + str(x)[:4] + ":" + str(y_values)[:4] + ")",
         xy = (x,y_values), fontsize=4)
-    #Название.
-    plt.title(s, fontsize=24)
-    plt.xlabel("x", fontsize=11)
-    plt.ylabel("y", fontsize=11)
+   
     #Границы осей.
     plt.axis([min(x_values),max(x_values) , min(f), max(f)])
     #Вывод графика.
@@ -74,8 +71,7 @@ while True:
         graph(x_values,f,s)
         
 
-    if input("Завершить работу?(y/n)") == 'y':
-        break
+       break
     
 
 
